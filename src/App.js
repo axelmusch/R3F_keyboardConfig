@@ -25,7 +25,7 @@ function Shoe() {
   // { nodes, materials } are extras that come from useLoader, these do not exist in threejs/GLTFLoader
   // nodes is a named collection of meshes, materials a named collection of materials
   const { nodes, materials } = useGLTF("KBD_small.glb")
-
+  console.log(ref)
   // Animate model
   useFrame((state) => {
     const t = state.clock.getElapsedTime()
@@ -59,6 +59,7 @@ function Shoe() {
         geometry={nodes.switches.geometry}
         material={materials.switches_material}
         material-color={snap.items.switches_material}
+        material-emissive={snap.items.switches_material}
         position={[-1.89, 0.24, -0.59]}
         rotation={[0.05, 0, 0]}
       />
@@ -99,6 +100,7 @@ function Shoe() {
         geometry={nodes.letters.geometry}
         material={materials.letters_materials}
         material-color={snap.items.letters_materials}
+        material-emissive={snap.items.letters_materials}
         position={[1.92, 0.33, 0.54]}
         rotation={[0, -Math.PI / 2, 0]}
       />
